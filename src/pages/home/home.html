@@ -1,0 +1,23 @@
+﻿<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div>
+    <button ion-button round (click)="play($event)" [disabled]="isPlaying">Play Sound</button>
+    <button ion-button round (click)="stop($event)" [disabled]="!isPlaying">Stop Sound</button>
+  </div>
+  <div></div>
+  <div>
+    <button ion-button round (click)=" enableBackgroundMode($event)" >Enable Background Mode</button>
+    <button ion-button round (click)="disableBackgroundMode($event)" >Disable Background Mode</button>
+  </div>
+  <ion-item>
+    Background mode is
+    <span *ngIf="_backgroundMode.isEnabled()">Enabled</span>
+    <span *ngIf="!(_backgroundMode.isEnabled())">Not Enabled</span>
+  </ion-item>
+</ion-content>
